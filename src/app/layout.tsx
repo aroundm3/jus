@@ -3,6 +3,8 @@ import { Roboto_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '../components/Header';
 import StoreProvider from './StoreProvider';
+import { NextUIProvider } from '@nextui-org/react';
+import { UIProviders } from './providers';
 
 const roboto_Mono = Roboto_Mono({ subsets: ['latin'] });
 
@@ -21,7 +23,7 @@ export default function RootLayout({
       <body className={roboto_Mono.className}>
         <StoreProvider>
           <Header />
-          {children}
+          <div className="container mx-auto">{children}</div>
         </StoreProvider>
       </body>
     </html>

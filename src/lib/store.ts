@@ -1,9 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { Tuple, configureStore } from '@reduxjs/toolkit';
 import { profileSlice } from './features/profile/profileSlice';
+import logger from 'redux-logger';
 
 export const makeStore = () => {
   return configureStore({
     reducer: { profileApp: profileSlice.reducer },
+    middleware: () => new Tuple(logger),
   });
 };
 

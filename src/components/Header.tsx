@@ -13,11 +13,13 @@ export default function Header() {
 
   return (
     <div className="w-screen flex container space-x-8 border-b justify-center py-4">
-      {headerTitle.map((headerItem) => {
+      {headerTitle.map((headerItem, idx) => {
         return (
           <Link
+            key={idx}
             href={headerItem.link}
             className={`${pathname === headerItem.link ? 'font-semibold' : ''}`}
+            prefetch={true}
           >
             {headerItem.title}
           </Link>
